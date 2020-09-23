@@ -1,0 +1,48 @@
+# Banks Loans on Home loan, gold loan and Education using Encapsulation
+class Bank_SBI:
+    def __Bank_loan_list(self): # this method is private
+        self.__loan_list = ["Home loan", "Gold Loan", "Education Loan"] #private variable.
+        j = 1
+        for loans in self.__loan_list:
+            print(j,loans)
+            j+=1
+
+    def __Bank_loan(self): # private method called in other methods of same class using self
+        self.__Bank_loan_list() # private method can be called in other methods of same class using self
+
+        self_loan_ch = int(input("Enter the Loan Choice 1/2/3/ :" ))
+        self.loan_amount = int(input("Enter the Loan Amount :"))
+        if self_loan_ch == 1:
+            if self.loan_amount > 85000:
+                print("Interest rate is 5% of your loan amount!")
+            else:
+                print("Interest rate is 13% of your loan amount!")
+        elif self_loan_ch == 2:
+            if self.loan_amount > 50000:
+                print("Interest rate is 8% of your loan amount!")
+            else:
+                print("Interest rate is 15% of your loan amount!")
+        elif self_loan_ch == 3:
+            if self.loan_amount > 100000:
+                print("Interest rate is 7% of your loan amount!")
+            else:
+                print("Interest rate is 15% of your loan amount!")
+
+    def get_balance(self): # public method
+        self.__balance = 50000 # balance variable is private , which is used within this method and  class
+        self.__ch_list = ["Check Balance", "Given Loans"]
+        j = 1
+        for ch in self.__ch_list:
+            print(j, ch)
+            j += 1
+        self.choice = int(input("Enter your Choice 1/2:"))
+        if self.choice ==1:
+            print("Your current balance is :", self.__balance)
+        elif self.choice ==2:
+            self.__Bank_loan()
+
+
+b = Bank_SBI()
+b.get_balance()
+
+
