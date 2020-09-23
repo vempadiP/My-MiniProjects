@@ -1,0 +1,37 @@
+import numpy as np
+
+array = np.array([[1, 2, 3], [4, 5, 6]])
+print(array)
+print(array.shape)
+
+#all array elements are intialized with 0's, 1's and any no and random values
+array1 = np.zeros((3, 4), dtype=int)
+print(array1)
+array1 = np.ones((3, 4), dtype=int)
+print(array1)
+array1 = np.full((3, 4), 5, dtype=int)
+print(array1)
+array1 = np.random.random((3, 4))
+print(array1)
+
+print(array1[0, 0])
+print(array1 > 0.2)
+print(array1[array1 > 0.2]) # returns array with the compared values
+print(np.floor(array1))
+print(np.ceil(array1))
+print(np.round(array1))
+print(np.sum(array1))
+
+# we can do arithmetic operations on array easily
+first = np.array([1, 2, 3])
+second = np.array([4, 5, 6])
+print(first + second)
+
+#convertion from inches to cm on array is pretty easy with numpy
+dimensions_inch = np.array([1, 2, 3])
+dimensions_cm = dimensions_inch * 2.54
+print(dimensions_cm)
+
+# normally in python without using numpy it would have been more complicated.
+dimensions_inch = [1, 2, 3]
+dimensions_cm = [x * 2.54 for x in dimensions_inch] # using comprehensions list
