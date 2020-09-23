@@ -1,0 +1,18 @@
+#To identity maximum times the characters repeated in sentence
+from pprint import pprint
+sentence = "This is a common interview question"
+
+char_frequency = {} # a dictionary  - where char has to be taken as key , and repetition has to be taken as a value.
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency[char] = 1
+print(char_frequency) #since it is unreadable so use pretty print pprint, import function mentioned above
+pprint(char_frequency, width=1)
+
+# as Dictionery is unordered set, we can't sort it, so use tuple concept to sort easily using sorted function
+
+char_frequency_sorted = sorted(char_frequency.items(), key= lambda kv: kv[1], reverse= True)
+print(char_frequency_sorted) # which will print full set in sorted order
+print("most repeated char:", char_frequency_sorted[0]) # the first item which is maximum highest repeated char
