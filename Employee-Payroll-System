@@ -1,0 +1,52 @@
+# Employee payroll system - this is employe pay class program with Method Overriding.
+class Emp_April:
+    def __init__(self, name):
+        print("\nEmployee %s's payroll Details" % name)
+
+    def e_sal(self,balance):
+        self.da = balance * 0.08
+        self.hra = balance * 0.01
+        self.pf = balance * 0.25
+        self.gross_salary = balance + self.da + self.hra
+        self.net_salary = self.gross_salary - self.pf
+        print("April month Salary :")
+        print("-----------------------------------------------------------")
+        print("DA :", self.da)
+        print("HRA :", self.hra)
+        print("pf :", self.pf)
+        print("Gross salary :", self.gross_salary)
+        print("Net salary :", self.net_salary)
+        print("------------------------------------------------------------")
+
+
+    def __del__(self):
+        pass
+
+class Emp_May(Emp_April):
+    def __init__(self, name):
+        print("Employee %s's payroll Details" % name)
+
+    def e_sal(self,balance):
+        self.da = balance * 0.08
+        self.hra = balance * 0.01
+        self.pf = balance * 0.25
+        self.gross_salary = balance + self.da + self.hra
+        self.net_salary = self.gross_salary - self.pf
+        print("Method Overriding is happening: Supposed to be called parent class April month's salary ")
+        print("But called May's month salary details due to Method Overriding.")
+        print("May month Salary :")
+        print("----------------------------------------------------------------------")
+        print("DA :", self.da)
+        print("HRA :", self.hra)
+        print("pf :", self.pf)
+        print("Gross salary :", self.gross_salary)
+        print("Net salary :", self.net_salary)
+
+    def __del__(self):
+        pass
+
+
+e = Emp_April("Padma");
+e.e_sal(50000)
+f = Emp_May("Padma");
+f.e_sal(55000)
