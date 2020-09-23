@@ -1,0 +1,51 @@
+'''
+1. Login Page
+username
+password
+uname='user'
+pwd='1234'
+Login Suceessfully !! ,Login Failed !!
+'''
+
+user_id = input("Enter the username or id : ").lower()
+password = input("Enter the password : ").upper()
+u_name = "padmavathi"
+pwd = 'A9750$'
+
+if (user_id == u_name) and (password == pwd):
+    print("Login Successfully!!!")
+else:
+    print("Login Failed!!!")
+
+
+#2. Getting the 3 input from user to check largest number in given number using nested if
+num1 = int(input("Enter the number1: "))
+num2 = int(input("Enter the number2: "))
+num3 = int(input("Enter the number3: "))
+if (num1 > num2) and (num1 > num3):
+    print("Largest number is %d:" % num1)
+else:
+    if (num2 > num3) and (num2 > num1):
+        print("Largest number is %d:" % num2)
+    else:
+        if (num3 > num1) and (num3 > num2):
+            print("Largest number is %d:" % num3)
+
+
+
+#3.Check whether the number is positive or negative using elif
+
+num = float(input("Enter a number to check the no is positive or negatve.: "))
+if num == 0:
+    print("Zero")
+elif num > 0:
+        print("Positive number")
+else:
+        print("Negative number")
+
+#4.Check whether the charater is vowel or not
+char1 = input("Enter any single albhabet or character: ").lower()
+if (char1 == 'a') or (char1 == 'e') or (char1 == 'i') or (char1 == 'o') or (char1 == 'u'):
+    print("given alphabet or character is an vowel")
+else:
+    print("given alphabet is not an vowel, is an consonant")
