@@ -1,0 +1,58 @@
+# Car Records to fetch using Abstraction:
+from abc import ABC, abstractmethod
+
+
+class CarRecords(ABC):
+    def getdata(self):
+        self.car_name = ["SKODA", "Alfa Romeo", "Land Rover", "Mercedes Benz"]
+        self.car_regno = ["73-NP-RN", "35-NK-AB", "50-PP-PK", "25-AC-LN"]
+        self.car_speed = [80, 100, 110, 90]
+        self.car_price = [3500000, 8200000, 7500000, 9000000]
+        self.car_gst = [75, 50, 80, 90]
+        self.car_tax = [95, 120, 150, 100]
+
+    @abstractmethod
+    def total(self):
+        pass
+
+    @abstractmethod
+    def mileage(self):
+        pass
+
+
+class Display(CarRecords):
+    def total(self):
+        self.tot = []
+        self.mil = []
+        for i in range(4):
+            self.t = self.car_price[i] + self.car_gst[i] + self.car_tax[i]
+            self.m = 80 / self.car_speed[i]
+            self.tot.insert(i, self.t)
+            self.mil.append(self.m)
+
+
+    def mileage(self):
+        self.name = str(input("Enter the name of the Car - SKODA/Alfa Romeo/Land Rover/Mercedes Benz :"))
+        if self.name == "SKODA":
+            self.disp(0)
+        elif self.name == "Alfa Romeo":
+            self.disp(1)
+        elif self.name == "Land Rover":
+            self.disp(2)
+        elif self.name == "Mercedes Benz":
+            self.disp(3)
+
+    def disp(self, i):
+        print("Car Register no:", self.car_regno[i])
+        print("Car Speed:", self.car_speed[i])
+        print("Car Price:", self.car_price[i])
+        print("Car GST:", self.car_gst[i])
+        print("Car TAX:", self.car_tax[i])
+        print("Car Final Price:", self.tot[i])
+        print("Car Mileage", self.mil[i])
+
+
+car = Display()
+car.getdata()
+car.total()
+car.mileage()
