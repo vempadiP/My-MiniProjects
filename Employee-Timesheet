@@ -1,0 +1,48 @@
+# Timesheets of employees using Threading:
+# Each function of a class we have to give the same name function in all the classes. Any name we can give like run, padma, getname.
+# but the same name function should follow in all the classes.
+
+from threading import Thread
+
+class Timesheets1(Thread):
+    def run(self):
+   #     print("        TIMESHEETS OF EMPLOYEES:\n")
+        self.name_list = ["NAMEs ", "Kalai ", "Nikhilesh ", "Vidhya ", "Padma " ]
+     #   self.i = 0
+        for self.i in range(5):
+            print(self.name_list[self.i])
+
+class Timesheets2(Thread):
+    def run(self):
+        self.timein_list = ["Time-In ", "9.00am ", "9.30am ", "8.30am ", "10.00am "]
+       # self.i = 0
+        for self.i in range(5):
+            print(self.timein_list[self.i])
+
+class Timesheets3(Thread):
+    def run(self):
+        self.timeout_list = ["Time-Out ", "18.00 ", "18.30 ", "18.00 ", "19.00 "]
+       # self.i = 0
+        for self.i in range(5):
+            print(self.timeout_list[self.i])
+class Timesheets4(Thread):
+    def run(self):
+        self.total_list = ["Total Hours ", "9.00hrs ", "9.00hrs ", "9.30hrs ", "9.00hrs "]
+        #self.i = 0
+        for self.i in range(5):
+            print(self.total_list[self.i])
+
+t1 = Timesheets1()
+t2 = Timesheets2()
+t3 = Timesheets3()
+t4 = Timesheets4()
+t1.start()
+t2.start()
+t3.start()
+t4.start()
+t1.join()
+t2.join()
+t3.join()
+t4.join()
+
+
