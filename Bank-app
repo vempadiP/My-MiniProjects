@@ -1,0 +1,56 @@
+# Banking application
+
+def deposit(bal):
+    a = int(input("Enter the value: " ))
+    bal = bal+a
+    return bal
+
+def withdraw(bal):
+    b = int(input("Enter the value: " ))
+    bal = bal - b
+    return bal
+
+def bal_enquiry(bal):
+    return bal
+
+def bank(b):
+    dec = 'y'
+    while (dec == "y"):
+        print("Would you like to do transactions:")
+        print("1. Deposit")
+        print("2. Withdraw")
+        print("3. Balance Enquiry")
+
+        ch = int(input("Choose your choice 1/2/3:" ))
+
+        if ch == 1:
+            res = deposit(b)
+            print("Your account balance is : ", res)
+        elif ch == 2:
+            res = withdraw(b)
+            print("Your account balance is : ", res)
+        elif ch ==3:
+            res = bal_enquiry(b)
+            print("Your account balance is: ", res)
+        else:
+            print(" Sorry, No choice transaction entered,Pleae try again ")
+
+        cont = input("Do you want to continue? Y/N : " ).lower()
+        dec = cont
+        b = res
+
+
+
+print("Bank application !")
+user_id = input("Enter the username or id : ").lower()
+password = input("Enter the password : ").lower()
+u_name = "padma"
+pwd = 'pppp'
+
+if (user_id == u_name) and (password == pwd):
+    print("Login Successful!!!")
+    bal = 0
+    bank(bal)
+else:
+    print("Login Failed!!!")
+
