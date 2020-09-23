@@ -1,0 +1,11 @@
+#weight of the person
+weight = int(input("Weight :"))
+unit = input("(L)bs or (K)gs:")
+
+if unit.upper() == "L":
+    converted = weight * 0.45
+    print(f"you are {converted} kilos")
+else:
+    converted = weight // 0.45
+    print(f"you are {converted} pounds")
+
