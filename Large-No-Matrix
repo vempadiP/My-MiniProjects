@@ -1,0 +1,20 @@
+#Lists
+numbers = [3, 7, 2, 9, 10]
+max = numbers[0]
+for number in numbers:
+    if number > max:
+        max = number
+print(f"Largest number in {numbers} ")
+print(max)
+
+print('2Dimensional Lists - Matrix')
+
+matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+]
+
+for row in matrix:
+    for item in row:
+        print(item)
